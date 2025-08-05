@@ -1,0 +1,566 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Electronics",
+            "image": "https://source.unsplash.com/600x400/?electronics,gadgets"
+        },
+        {
+            "id": 2,
+            "name": "Clothing",
+            "image": "https://source.unsplash.com/600x400/?clothing,fashion"
+        },
+        {
+            "id": 3,
+            "name": "Books",
+            "image": "https://source.unsplash.com/600x400/?books,reading"
+        },
+        {
+            "id": 4,
+            "name": "Home & Kitchen",
+            "image": "https://source.unsplash.com/600x400/?kitchen,home"
+        },
+        {
+            "id": 5,
+            "name": "Beauty",
+            "image": "https://source.unsplash.com/600x400/?beauty,makeup"
+        },
+        {
+            "id": 6,
+            "name": "Toys",
+            "image": "https://source.unsplash.com/600x400/?toys,children"
+        },
+        {
+            "id": 7,
+            "name": "Sports",
+            "image": "https://source.unsplash.com/600x400/?sports,outdoor"
+        },
+        {
+            "id": 8,
+            "name": "Automotive",
+            "image": "https://source.unsplash.com/600x400/?car,automotive"
+        },
+        {
+            "id": 9,
+            "name": "Office Supplies",
+            "image": "https://source.unsplash.com/600x400/?office,stationery"
+        },
+        {
+            "id": 10,
+            "name": "Health",
+            "image": "https://source.unsplash.com/600x400/?health,medicine"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "Wireless Headphones",
+            "price": 99.99,
+            "categoryId": 1,
+            "description": "Bluetooth noise-canceling headphones",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?headphones",
+                "https://source.unsplash.com/400x400/?wireless,earbuds",
+                "https://source.unsplash.com/400x400/?audio"
+            ],
+            "rating": {
+                "rate": 4.4,
+                "count": 220
+            }
+        },
+        {
+            "id": 2,
+            "name": "Smartphone",
+            "price": 499.99,
+            "categoryId": 1,
+            "description": "Latest Android phone",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?smartphone",
+                "https://source.unsplash.com/400x400/?phone",
+                "https://source.unsplash.com/400x400/?mobile"
+            ],
+            "rating": {
+                "rate": 4.7,
+                "count": 580
+            }
+        },
+        {
+            "id": 3,
+            "name": "Bluetooth Speaker",
+            "price": 35.99,
+            "categoryId": 1,
+            "description": "Portable speaker with deep bass",
+            "inStock": false,
+            "images": [
+                "https://source.unsplash.com/400x400/?speaker",
+                "https://source.unsplash.com/400x400/?audio,speaker",
+                "https://source.unsplash.com/400x400/?bluetooth"
+            ],
+            "rating": {
+                "rate": 4.2,
+                "count": 150
+            }
+        },
+        {
+            "id": 4,
+            "name": "Men's T-Shirt",
+            "price": 15.5,
+            "categoryId": 2,
+            "description": "Comfortable cotton shirt",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?tshirt",
+                "https://source.unsplash.com/400x400/?clothing,shirt",
+                "https://source.unsplash.com/400x400/?fashion,shirt"
+            ],
+            "rating": {
+                "rate": 4.1,
+                "count": 84
+            }
+        },
+        {
+            "id": 5,
+            "name": "Women's Jacket",
+            "price": 49.99,
+            "categoryId": 2,
+            "description": "Stylish and warm",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?jacket",
+                "https://source.unsplash.com/400x400/?clothing,jacket",
+                "https://source.unsplash.com/400x400/?fashion,jacket"
+            ],
+            "rating": {
+                "rate": 4.6,
+                "count": 210
+            }
+        },
+        {
+            "id": 6,
+            "name": "Sneakers",
+            "price": 59.99,
+            "categoryId": 2,
+            "description": "Running shoes with good grip",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?sneakers",
+                "https://source.unsplash.com/400x400/?running,shoes",
+                "https://source.unsplash.com/400x400/?sport,shoes"
+            ],
+            "rating": {
+                "rate": 4.3,
+                "count": 134
+            }
+        },
+        {
+            "id": 7,
+            "name": "Cookbook",
+            "price": 19.99,
+            "categoryId": 3,
+            "description": "Healthy recipes for home cooking",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?cookbook",
+                "https://source.unsplash.com/400x400/?recipes",
+                "https://source.unsplash.com/400x400/?cooking"
+            ],
+            "rating": {
+                "rate": 4.8,
+                "count": 320
+            }
+        },
+        {
+            "id": 8,
+            "name": "Fiction Novel",
+            "price": 12.99,
+            "categoryId": 3,
+            "description": "Best-selling thriller",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?novel",
+                "https://source.unsplash.com/400x400/?books,thriller",
+                "https://source.unsplash.com/400x400/?reading"
+            ],
+            "rating": {
+                "rate": 4.5,
+                "count": 197
+            }
+        },
+        {
+            "id": 9,
+            "name": "Children's Storybook",
+            "price": 9.5,
+            "categoryId": 3,
+            "description": "Illustrated bedtime stories",
+            "inStock": false,
+            "images": [
+                "https://source.unsplash.com/400x400/?storybook",
+                "https://source.unsplash.com/400x400/?children,books",
+                "https://source.unsplash.com/400x400/?kids,reading"
+            ],
+            "rating": {
+                "rate": 4.9,
+                "count": 88
+            }
+        },
+        {
+            "id": 10,
+            "name": "Air Fryer",
+            "price": 89.99,
+            "categoryId": 4,
+            "description": "Oil-free healthy cooking",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?airfryer",
+                "https://source.unsplash.com/400x400/?kitchen,appliance",
+                "https://source.unsplash.com/400x400/?healthy,cooking"
+            ],
+            "rating": {
+                "rate": 4.3,
+                "count": 175
+            }
+        },
+        {
+            "id": 11,
+            "name": "Non-stick Pan",
+            "price": 24.99,
+            "categoryId": 4,
+            "description": "Durable non-stick surface",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?pan",
+                "https://source.unsplash.com/400x400/?cooking,pan",
+                "https://source.unsplash.com/400x400/?kitchen"
+            ],
+            "rating": {
+                "rate": 4.0,
+                "count": 96
+            }
+        },
+        {
+            "id": 12,
+            "name": "Vacuum Cleaner",
+            "price": 139.99,
+            "categoryId": 4,
+            "description": "High-suction, bagless vacuum",
+            "inStock": false,
+            "images": [
+                "https://source.unsplash.com/400x400/?vacuum",
+                "https://source.unsplash.com/400x400/?cleaning",
+                "https://source.unsplash.com/400x400/?home,appliance"
+            ],
+            "rating": {
+                "rate": 4.2,
+                "count": 143
+            }
+        },
+        {
+            "id": 13,
+            "name": "Lipstick Set",
+            "price": 25.99,
+            "categoryId": 5,
+            "description": "Set of 5 matte lipsticks",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?lipstick",
+                "https://source.unsplash.com/400x400/?makeup",
+                "https://source.unsplash.com/400x400/?beauty"
+            ],
+            "rating": {
+                "rate": 4.7,
+                "count": 212
+            }
+        },
+        {
+            "id": 14,
+            "name": "Face Serum",
+            "price": 19.49,
+            "categoryId": 5,
+            "description": "Brightening vitamin C serum",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?serum",
+                "https://source.unsplash.com/400x400/?skincare",
+                "https://source.unsplash.com/400x400/?beauty"
+            ],
+            "rating": {
+                "rate": 4.6,
+                "count": 168
+            }
+        },
+        {
+            "id": 15,
+            "name": "Makeup Brush Kit",
+            "price": 34.99,
+            "categoryId": 5,
+            "description": "10-piece brush set",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?makeup,brush",
+                "https://source.unsplash.com/400x400/?brushes",
+                "https://source.unsplash.com/400x400/?beauty,tools"
+            ],
+            "rating": {
+                "rate": 4.5,
+                "count": 110
+            }
+        },
+        {
+            "id": 16,
+            "name": "Lego Set",
+            "price": 59.99,
+            "categoryId": 6,
+            "description": "Creative building blocks",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?lego",
+                "https://source.unsplash.com/400x400/?toys",
+                "https://source.unsplash.com/400x400/?blocks"
+            ],
+            "rating": {
+                "rate": 4.9,
+                "count": 305
+            }
+        },
+        {
+            "id": 17,
+            "name": "Action Figure",
+            "price": 14.99,
+            "categoryId": 6,
+            "description": "Superhero collectible toy",
+            "inStock": false,
+            "images": [
+                "https://source.unsplash.com/400x400/?action,figure",
+                "https://source.unsplash.com/400x400/?superhero",
+                "https://source.unsplash.com/400x400/?toys"
+            ],
+            "rating": {
+                "rate": 4.4,
+                "count": 94
+            }
+        },
+        {
+            "id": 18,
+            "name": "Board Game",
+            "price": 29.99,
+            "categoryId": 6,
+            "description": "Family strategy game",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?boardgame",
+                "https://source.unsplash.com/400x400/?game",
+                "https://source.unsplash.com/400x400/?strategy"
+            ],
+            "rating": {
+                "rate": 4.8,
+                "count": 122
+            }
+        },
+        {
+            "id": 19,
+            "name": "Football",
+            "price": 22.99,
+            "categoryId": 7,
+            "description": "Standard size outdoor football",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?football",
+                "https://source.unsplash.com/400x400/?soccer",
+                "https://source.unsplash.com/400x400/?sports,ball"
+            ],
+            "rating": {
+                "rate": 4.2,
+                "count": 150
+            }
+        },
+        {
+            "id": 20,
+            "name": "Yoga Mat",
+            "price": 18.99,
+            "categoryId": 7,
+            "description": "Non-slip exercise mat",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?yoga",
+                "https://source.unsplash.com/400x400/?mat",
+                "https://source.unsplash.com/400x400/?exercise"
+            ],
+            "rating": {
+                "rate": 4.4,
+                "count": 119
+            }
+        },
+        {
+            "id": 21,
+            "name": "Dumbbell Set",
+            "price": 49.99,
+            "categoryId": 7,
+            "description": "Adjustable weights",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?dumbbell",
+                "https://source.unsplash.com/400x400/?weights",
+                "https://source.unsplash.com/400x400/?exercise"
+            ],
+            "rating": {
+                "rate": 4.3,
+                "count": 78
+            }
+        },
+        {
+            "id": 22,
+            "name": "Car Vacuum",
+            "price": 29.99,
+            "categoryId": 8,
+            "description": "Compact vacuum for vehicle",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?car,vacuum",
+                "https://source.unsplash.com/400x400/?car,cleaning",
+                "https://source.unsplash.com/400x400/?automotive"
+            ],
+            "rating": {
+                "rate": 4.1,
+                "count": 63
+            }
+        },
+        {
+            "id": 23,
+            "name": "Phone Mount",
+            "price": 13.49,
+            "categoryId": 8,
+            "description": "Dashboard phone holder",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?phone,mount",
+                "https://source.unsplash.com/400x400/?car,accessories",
+                "https://source.unsplash.com/400x400/?automotive"
+            ],
+            "rating": {
+                "rate": 4.6,
+                "count": 138
+            }
+        },
+        {
+            "id": 24,
+            "name": "Tire Inflator",
+            "price": 39.99,
+            "categoryId": 8,
+            "description": "Portable air pump",
+            "inStock": false,
+            "images": [
+                "https://source.unsplash.com/400x400/?tire,inflator",
+                "https://source.unsplash.com/400x400/?car,repair",
+                "https://source.unsplash.com/400x400/?automotive"
+            ],
+            "rating": {
+                "rate": 4.2,
+                "count": 91
+            }
+        },
+        {
+            "id": 25,
+            "name": "Notebook Pack",
+            "price": 7.99,
+            "categoryId": 9,
+            "description": "Pack of 5 ruled notebooks",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?notebook",
+                "https://source.unsplash.com/400x400/?stationery",
+                "https://source.unsplash.com/400x400/?office"
+            ],
+            "rating": {
+                "rate": 4.5,
+                "count": 101
+            }
+        },
+        {
+            "id": 26,
+            "name": "Desk Organizer",
+            "price": 15.99,
+            "categoryId": 9,
+            "description": "Multi-slot organizer for office",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?desk,organizer",
+                "https://source.unsplash.com/400x400/?office,supplies",
+                "https://source.unsplash.com/400x400/?stationery"
+            ],
+            "rating": {
+                "rate": 4.3,
+                "count": 85
+            }
+        },
+        {
+            "id": 27,
+            "name": "Office Chair",
+            "price": 89.99,
+            "categoryId": 9,
+            "description": "Ergonomic mesh chair",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?office,chair",
+                "https://source.unsplash.com/400x400/?ergonomic,chair",
+                "https://source.unsplash.com/400x400/?desk,chair"
+            ],
+            "rating": {
+                "rate": 4.6,
+                "count": 142
+            }
+        },
+        {
+            "id": 28,
+            "name": "Vitamins C Tablets",
+            "price": 14.99,
+            "categoryId": 10,
+            "description": "Immunity booster",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?vitamins",
+                "https://source.unsplash.com/400x400/?medicine",
+                "https://source.unsplash.com/400x400/?health"
+            ],
+            "rating": {
+                "rate": 4.7,
+                "count": 158
+            }
+        },
+        {
+            "id": 29,
+            "name": "Digital Thermometer",
+            "price": 10.49,
+            "categoryId": 10,
+            "description": "Instant-read body thermometer",
+            "inStock": true,
+            "images": [
+                "https://source.unsplash.com/400x400/?thermometer",
+                "https://source.unsplash.com/400x400/?medicine",
+                "https://source.unsplash.com/400x400/?healthcare"
+            ],
+            "rating": {
+                "rate": 4.4,
+                "count": 132
+            }
+        },
+        {
+            "id": 30,
+            "name": "First Aid Kit",
+            "price": 24.99,
+            "categoryId": 10,
+            "description": "Compact medical emergency kit",
+            "inStock": false,
+            "images": [
+                "https://source.unsplash.com/400x400/?firstaid",
+                "https://source.unsplash.com/400x400/?medical",
+                "https://source.unsplash.com/400x400/?health"
+            ],
+            "rating": {
+                "rate": 4.8,
+                "count": 98
+            }
+        }
+    ]
+}

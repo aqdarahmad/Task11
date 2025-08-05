@@ -1,0 +1,33 @@
+:root {
+  --mahogany: #442727;
+  --white-smoke: #E9E7D9;
+  --light-camel: #D2C6B2;
+  --pistachio-cream: #927D14;
+}
+
+.navitem {
+  list-style: none;
+  cursor: pointer;
+  padding: 12px 20px;
+  margin: 8px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--white-smoke);
+  background-color: var(--mahogany);
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+
+.navitem:hover {
+  background-color: var(--pistachio-cream);
+  color: var(--mahogany);
+  box-shadow: 0 2px 8px rgba(146, 125, 20, 0.5);
+}
+
+.navitem:active {
+  background-color: var(--light-camel);
+  color: var(--mahogany);
+  box-shadow: inset 0 2px 4px rgba(68, 39, 39, 0.6);
+}

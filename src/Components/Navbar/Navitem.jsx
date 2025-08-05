@@ -1,0 +1,20 @@
+
+import './navitem.css'
+import {useNavigate} from 'react-router-dom'
+
+function Navitem( {title , link}) {
+   /*  const handleclick=()=>{
+       navigate(link)
+       onClick={handleclick}
+    } 
+
+    const navigate = useNavigate();
+    */
+  return (
+   <li className="navitem">{title}
+
+   </li>
+  )
+}
+
+export default Navitem

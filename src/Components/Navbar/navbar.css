@@ -1,0 +1,29 @@
+:root {
+  --mahogany: #442727;
+  --white-smoke: #E9E7D9;
+  --light-camel: #D2C6B2;
+  --pistachio-cream: #927D14;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--mahogany);
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: var(--white-smoke);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 8px rgba(68, 39, 39, 0.5);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  user-select: none;
+}
+
+.links {
+  display: flex;
+  gap: 16px;
+}
