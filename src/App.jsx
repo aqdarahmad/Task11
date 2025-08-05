@@ -1,5 +1,6 @@
 import Navbar from "./Components/Navbar/Navbar"
 import Navitem from "./Components/Navbar/Navitem"
+import Footer from "./Components/Footer/Footer"
 
 export default function App() {
   return (
@@ -11,6 +12,8 @@ export default function App() {
        
 
       </Navbar>
+
+      <Footer/>
 
     
     </>

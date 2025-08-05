@@ -1,19 +1,31 @@
+:root {
+  --mahogany: #442727;
+  --white-smoke: #E9E7D9;
+  --light-camel: #D2C6B2;
+  --pistachio-cream: #927D14;
+}
+
 .footer {
-  background-color: #f2f2f2;
-  padding: 20px;
+  background-color: var(--mahogany);
+  color: var(--white-smoke);
+  padding: 30px 20px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  color: #333;
+  gap: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-top: 4px solid var(--pistachio-cream);
 }
 
 .footer-section {
   flex: 1 1 200px;
-  margin: 10px;
+  min-width: 250px;
 }
 
+.footer-section h3,
 .footer-section h4 {
   margin-bottom: 10px;
+  color: var(--light-camel);
 }
 
 .footer-section ul {
@@ -21,15 +33,25 @@
   padding: 0;
 }
 
-.footer-section ul li a {
-  text-decoration: none;
-  color: #333;
+.footer-section ul li {
+  margin: 6px 0;
 }
 
-.footer-bottom {
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
-  font-size: 0.9em;
-  color: #777;
+.footer-section ul li a {
+  color: var(--white-smoke);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: var(--pistachio-cream);
+}
+
+.social-links a {
+  color: var(--white-smoke);
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: var(--pistachio-cream);
 }
