@@ -1,11 +1,13 @@
 
 import AppRoutes from './AppRoutes'
+import Footer from './Components/Footer/Footer';
 
-import AddProduct from './Components/AddProduct/AddProduct';
 
-import Slider from "react-slick";
+
 
 import React, { useEffect, useState } from 'react';
+import Navbar from './Components/Navbar/Navbar';
+import Navitem from './Components/Navbar/Navitem';
 
 export default function App() {
 
@@ -38,11 +40,18 @@ export default function App() {
 
   return (
     <>
-    
+    <Navbar logo={"React Shop"}>
+                <Navitem title={"Home"} link={"/"} />
+                <Navitem title={"Details"} link={"/details"} />
+                <Navitem title={"Cart"} link={"/cart"} />
 
+
+            </Navbar>
+    
 
    <AppRoutes/>
 
+   <Footer/>
 
 
 
@@ -51,9 +60,10 @@ export default function App() {
 
 
 
- <div>
+
+{/*  <div>
       <AddProduct addproduct={addProduct} />
-    </div>
+    </div> */}
 
 
 

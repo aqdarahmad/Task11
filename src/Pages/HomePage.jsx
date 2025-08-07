@@ -5,7 +5,8 @@ import Footer from "../Components/Footer/Footer"
 import Category from "../Components/Category/Category";
 import { useState, useEffect } from 'react';
 import Product from "../Components/Product/Product";
-import Slider from "react-slick";
+import CategoryProduct from "../Components/CategoryProducts/CategoryProducts";
+
 
 export default function HomePage() {
 
@@ -78,17 +79,17 @@ const settings = {
 
     return (
         <div>
-            <Navbar logo={"React Shop"}>
+          {/*   <Navbar logo={"React Shop"}>
                 <Navitem title={"Home"} link={"/"} />
                 <Navitem title={"Details"} link={"/details"} />
                 <Navitem title={"Cart"} link={"/cart"} />
 
 
-            </Navbar>
+            </Navbar> */}
 
 
 
-
+{/* 
 
             <div>
                 <h2>Categories</h2>
@@ -122,11 +123,13 @@ const settings = {
     )
   }
 </div>
+ */}
+
+ <CategoryProduct/>
 
 
-
-
-            <Footer />
+{/* 
+            <Footer /> */}
 
 
         </div>
