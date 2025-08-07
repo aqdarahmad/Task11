@@ -1,20 +1,18 @@
+import './navitem.css';
+import { useNavigate } from 'react-router-dom';
 
-import './navitem.css'
-import {useNavigate} from 'react-router-dom'
+function Navitem({ title, link }) {
+  const navigate = useNavigate();
 
-function Navitem( {title , link}) {
-     const handleclick=()=>{
-       navigate(link)
-       onClick={handleclick}
-    } 
+  const handleClick = () => {
+    navigate(link);
+  };
 
-    const navigate = useNavigate();
-    
   return (
-   <li className="navitem" onClick={handleclick}>{title}
-
-   </li>
-  )
+    <li className="navitem" onClick={handleClick}>
+      {title}
+    </li>
+  );
 }
 
-export default Navitem
+export default Navitem;
