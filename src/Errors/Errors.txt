@@ -1,0 +1,5 @@
+الخطا الاول :
+Error: listen EADDRINUSE: address already in use :::3000
+الحل انه كتبت هاد الكوماند netstat -ano | findstr :3000
+بعدين رح يظهر قائمه  عناوين
+اخر كوماند taskkill /PID <PID> /F
