@@ -4,26 +4,27 @@
 }
 
 .more-details-button {
-  background-color: #007bff;
-  color: white;
+  background-color: #284139; /* Emerald Green */
+  color: #F8E794; /* Creased Khaki */
   border: none;
   padding: 10px 16px;
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
+  font-weight: 600;
   transition: background-color 0.3s ease;
 }
 
 .more-details-button:hover {
-  background-color: #0056b3;
+  background-color: #BB6830; /* Egyptian Earth */
 }
 
 .product-images {
   margin-top: 1rem;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #809076; /* Wasabi */
   border-radius: 6px;
-  background-color: #f9f9f9;
+  background-color: #F8E794; /* Creased Khaki */
 }
 
 .thumbnail-list {
@@ -45,5 +46,5 @@
 
 .thumbnail:hover {
   transform: scale(1.05);
-  border-color: #007bff;
+  border-color: #BB6830; /* Egyptian Earth */
 }

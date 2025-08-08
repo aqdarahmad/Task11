@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './product.css';
 import AddProduct from '../AddProduct/AddProduct';
-import MoreDetailsButton from '../MoreDetails/MoreDetailsButtton'; // ✅ تأكد أن اسم الملف مطابق تمامًا
+import MoreDetailsButton from '../MoreDetails/MoreDetailsButtton'; 
 
 export default function Product({ info }) {
   const images = Array.isArray(info?.images) ? info.images : [];
@@ -20,9 +20,7 @@ export default function Product({ info }) {
     <div className="product-card">
       <h2 className="product-name">{info?.name || 'Unnamed Product'}</h2>
 
-      {mainImage && (
-        <img src={mainImage} alt={info?.name || 'Product'} className="main-image" />
-      )}
+    
 
       <div className="thumbnail-list">
         {images.map((img, idx) => (
@@ -31,7 +29,7 @@ export default function Product({ info }) {
             src={img}
             alt={`Thumbnail ${idx + 1}`}
             className={`thumbnail ${img === mainImage ? 'selected' : ''}`}
-            onClick={() => setMainImage(img)}
+          
           />
         ))}
       </div>

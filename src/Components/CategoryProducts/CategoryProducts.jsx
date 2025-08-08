@@ -6,7 +6,7 @@ export default function CategoryProduct() {
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  // جلب التصنيفات مرة واحدة
+ 
   useEffect(() => {
     fetch("http://localhost:3000/categories")
       .then(res => res.json())
@@ -14,7 +14,7 @@ export default function CategoryProduct() {
       .catch(err => console.error("Error fetching categories:", err));
   }, []);
 
-  // جلب المنتجات عند الضغط على كاتيجوري
+
   const handleCategoryClick = (categoryId) => {
     setSelectedCategory(categoryId);
     fetch(`http://localhost:3000/products?categoryId=${categoryId}`)
@@ -45,7 +45,7 @@ export default function CategoryProduct() {
           <div className="products-grid">
             {products.map((prod) => (
               <div key={prod.id} className="product-card">
-                {/* عرض أول صورة من مصفوفة الصور */}
+              
                 <img 
                   src={prod.images && prod.images.length > 0 ? prod.images[0] : "https://via.placeholder.com/200x150?text=No+Image"} 
                   alt={prod.name} 
