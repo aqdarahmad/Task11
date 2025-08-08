@@ -33,6 +33,11 @@ useEffect(() => {
     return <p className="empty-cart-msg">Your cart is empty.</p>;
   } */
 
+      const totalPrice = products.reduce(
+    (total, product) => total + product.price * (product.quantity || 1),
+    0
+  );
+
   return (
     <div className="cart-container">
       <h2 className="cart-title">Shopping Cart</h2>
@@ -40,10 +45,14 @@ useEffect(() => {
         {products.map(product => (
           <div key={product.id} className="product-item-simple">
             <h4 className="product-name">{product.name}</h4>
-            <p className="product-description">{product.description || "No description available"}</p>
+            <p className="product-description">{product.description}</p>
             <p className="product-price">${product.price}</p>
+            <p className="product-price">
+                  ${product.price} x {product.quantity || 1} = ${(product.price * (product.quantity || 1)).toFixed(2)}
+                </p>
           </div>
         ))}
+        <h3 className="total-price">Total Price: ${totalPrice.toFixed(2)}</h3>
       </div>
     </div>
   );
