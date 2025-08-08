@@ -14,7 +14,7 @@ export default function App() {
 
 
 
-
+/* 
    const [Newproducts, setnewProducts] = useState([]);
 
 
@@ -22,7 +22,7 @@ export default function App() {
     const addProduct = (newProduct) => {
     setnewProducts(prev => [...prev, newProduct]);
   };
-
+ */
     
 
 
