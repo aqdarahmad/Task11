@@ -3,9 +3,8 @@ import './addescarts.css';
 
 export default function AddedCart() {
   const [products, setProducts] = useState([]);
-
+/* 
   useEffect(() => {
-    // جلب المنتجات كاملة من localStorage تحت المفتاح "localProducts"
     const storedProducts = localStorage.getItem("localProducts");
     if (storedProducts) {
       try {
@@ -18,11 +17,21 @@ export default function AddedCart() {
     } else {
       setProducts([]);
     }
-  }, []);
+  }, []); */
+  function getStoredProducts() {
+  const storedProducts = localStorage.getItem("localProducts");
+  return storedProducts ? JSON.parse(storedProducts) : [];
+}
 
-  if (products.length === 0) {
+useEffect(() => {
+ 
+  setProducts(getStoredProducts());
+}, []);
+
+
+ /*  if (products.length === 0) {
     return <p className="empty-cart-msg">Your cart is empty.</p>;
-  }
+  } */
 
   return (
     <div className="cart-container">
@@ -32,7 +41,7 @@ export default function AddedCart() {
           <div key={product.id} className="product-item-simple">
             <h4 className="product-name">{product.name}</h4>
             <p className="product-description">{product.description || "No description available"}</p>
-            <p className="product-price">${product.price.toFixed(2)}</p>
+            <p className="product-price">${product.price}</p>
           </div>
         ))}
       </div>

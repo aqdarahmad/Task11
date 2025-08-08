@@ -561,27 +561,7 @@
         "rate": 4.8,
         "count": 98
       }
-    },
-    {
-      "id": 1754608955396,
-      "name": "Iphone",
-      "price": 50000,
-      "description": "15 pro max",
-      "images": []
-    },
-    {
-      "id": 1754609044666,
-      "name": "Iphone",
-      "price": 50000,
-      "description": "15 pro max",
-      "images": []
-    },
-    {
-      "id": 1754609418524,
-      "name": "Iphone",
-      "price": 50000,
-      "description": "15 pro max",
-      "images": []
     }
+
   ]
 }
