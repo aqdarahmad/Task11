@@ -33,10 +33,10 @@ input[type="number"]:focus {
 button {
   background-color: #284139; /* Emerald Green */
   color: #F8E794; /* Creased Khaki */
-  font-weight: 700;
-  padding: 14px;
+  font-weight: 500;
+  padding: 9px;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 1.1rem;
   transition: background-color 0.3s ease;
