@@ -12,11 +12,11 @@ export default function AppRoutes() {
         <Route path='/' element={<HomePage/>}/>
         
 
-       <Route path="/details" element={<DetailsPage />} />
+    {/*    <Route path="/details" element={<DetailsPage />} /> */}
 
 
         
-       {/*  <Route path="/product/:id" element={<DetailsPage />} /> */}
+       {  <Route path="/product/:id" element={<DetailsPage />} /> }
 
         
         <Route path='/cart' element={<CartPage/>}/>

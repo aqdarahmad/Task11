@@ -1,14 +1,16 @@
 
 import { useEffect, useState } from 'react';
 import Product from '../Components/Product/Product';
+import { useParams } from 'react-router-dom';
 
 export default function DetailsPage() {
 
   const [product, setProduct] = useState([]);
+   const { id } = useParams();
 
   const fetchProduct = async () => {
     try {
-      const response = await fetch("http://localhost:3000/products")
+      const response = await fetch(`http://localhost:3000/products/${id}`)
       const dataset = await response.json();
       setProduct(dataset);
     }
@@ -20,7 +22,7 @@ export default function DetailsPage() {
   useEffect(() => {
     fetchProduct();
 
-  }, []);
+  }, [id]);
 
 
   return (
@@ -32,9 +34,7 @@ export default function DetailsPage() {
       whiteSpace: "nowrap",
       padding: "10px"
     }} className="details-page">
-      {product.map(item => (
-        <Product key={item.id} info={item} />
-      ))}
+     <Product key={product.id} info={product} />
     </div>
 
   );
