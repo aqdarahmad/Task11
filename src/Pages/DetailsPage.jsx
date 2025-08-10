@@ -9,14 +9,12 @@ export default function DetailsPage() {
    const { id } = useParams();
 
   const fetchProduct = async () => {
-    try {
+    
       const response = await fetch(`http://localhost:3000/products/${id}`)
       const dataset = await response.json();
       setProduct(dataset);
-    }
-    catch (error) {
-      console.error("Error fetching product", error);
-    }
+   
+   
   };
 
   useEffect(() => {

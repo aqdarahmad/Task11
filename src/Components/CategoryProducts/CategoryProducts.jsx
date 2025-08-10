@@ -1,20 +1,13 @@
 import { useState, useEffect } from "react";
 import "./categoryproduct.css";
 import classNames from 'classnames';
+import Product from "../Product/Product";
 
 export default function CategoryProduct() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState();
 
-
-  /* useEffect(() => {
-    fetch("http://localhost:3000/categories")
-      .then(res => res.json())
-      .then(data => setCategories(data))
-      .catch(err => console.error("Error fetching categories:", err));
-  }, []);
- */
 
   function fetchCategories() {
     const getData = async () => {
@@ -65,25 +58,18 @@ export default function CategoryProduct() {
         }
       </div >
 
-      {selectedCategory && (
-        <>
-          <h3>Products</h3>
-          <div className="products-grid">
-            {products.map((prod) => (
-              <div key={prod.id} className="product-card">
-
-                <img
-                  src={prod.images && prod.images.length > 0 ? prod.images[0] : "https://via.placeholder.com/200x150?text=No+Image"}
-                  alt={prod.name}
-                  className="product-image"
-                />
-                <h4>{prod.name}</h4>
-                <p>${prod.price}</p>
-              </div>
-            ))}
-          </div>
-        </>
-      )}
+   {selectedCategory && (
+  <div className="product-list">
+    {products.map((prod) => (
+      <Product
+        key={prod.id}
+        info={prod}
+        onAddToCart={() => console.log(`Added ${prod.name} to cart`)}
+        onMoreDetails={() => console.log(`Details of ${prod.name}`)}
+      />
+    ))}
+  </div>
+)}
     </div >
   );
 }
