@@ -9,7 +9,7 @@ export default function AddedCart() {
     if (storedProducts) {
       const parsedProducts = JSON.parse(storedProducts);
 
-      
+      // دمج المنتجات المتكررة مع زيادة الكمية
       const mergedProducts = parsedProducts.reduce((acc, prod) => {
         const existing = acc.find(item => item.id === prod.id);
         if (existing) {
@@ -23,6 +23,29 @@ export default function AddedCart() {
       setProducts(mergedProducts);
     }
   }, []);
+
+  // تحديث localStorage عند تغيير المنتجات
+  useEffect(() => {
+    localStorage.setItem("localProducts", JSON.stringify(products));
+  }, [products]);
+
+  const handleRemove = (id) => {
+    const filtered = products.filter(p => p.id !== id);
+    setProducts(filtered);
+  };
+
+  const handleQuantityChange = (id, delta) => {
+    setProducts(products.map(product => {
+      if (product.id === id) {
+        const newQuantity = (product.quantity || 1) + delta;
+        return {
+          ...product,
+          quantity: newQuantity > 0 ? newQuantity : 1
+        };
+      }
+      return product;
+    }));
+  };
 
   const totalPrice = products.reduce(
     (total, product) => total + product.price * (product.quantity || 1),
@@ -38,12 +61,26 @@ export default function AddedCart() {
       <h2 className="cart-title">Shopping Cart</h2>
       <div className="products-list">
         {products.map((product, index) => (
-          <div key={`${product.id}-${index}`} className="product-item-simple">
-            <h4 className="product-name">{product.name}</h4>
-            <p><strong>Price:</strong> ${product.price.toFixed(2)}</p>
-            <p><strong>Quantity:</strong> {product.quantity}</p>
-            <p><strong>Description:</strong> {product.description}</p>
-            <p><strong>Subtotal:</strong> ${(product.price * product.quantity).toFixed(2)}</p>
+          <div key={`${product.id}-${index}`} className="product-item-simple" style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+            <img
+              src={product.images?.[0] || product.image || ''}
+              alt={product.name}
+              style={{ width: '80px', height: '80px', objectFit: 'cover', marginRight: '15px', borderRadius: '8px' }}
+            />
+            <div style={{ flexGrow: 1 }}>
+              <h4 className="product-name">{product.name}</h4>
+              <p><strong>Price:</strong> ${product.price.toFixed(2)}</p>
+              <p><strong>Description:</strong> {product.description}</p>
+              <p><strong>Subtotal:</strong> ${(product.price * product.quantity).toFixed(2)}</p>
+              <div style={{ marginTop: '5px' }}>
+                <button onClick={() => handleQuantityChange(product.id, -1)}>-</button>
+                <span style={{ margin: '0 10px' }}>{product.quantity}</span>
+                <button onClick={() => handleQuantityChange(product.id, 1)}>+</button>
+              </div>
+            </div>
+            <button onClick={() => handleRemove(product.id)} style={{ marginLeft: '10px', backgroundColor: '#c0392b', color: 'white', border: 'none', padding: '8px 12px', borderRadius: '5px', cursor: 'pointer' }}>
+              Remove
+            </button>
           </div>
         ))}
         <h3 className="total-price">Total Price: ${totalPrice.toFixed(2)}</h3>
