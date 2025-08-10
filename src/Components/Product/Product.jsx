@@ -3,7 +3,7 @@ import './product.css';
 import MoreDetailsButton from '../MoreDetails/MoreDetailsButtton';
 import AddProductButton from '../AddtoCartButton/AddToCartButton';
 
-export default function Product({ info }) {
+export default function Product({ info, showMoreDetails = true}) {
   const images = info.images || [];
   const [mainImage, setMainImage] = useState("");
   
@@ -24,7 +24,7 @@ export default function Product({ info }) {
       </div>
       <div className="product-actions">
         <AddProductButton product={info} onAdd={() => alert("Product Added Successfully")} />
-        <MoreDetailsButton product={info} />
+       {showMoreDetails && <MoreDetailsButton product={info} />}
       </div>
     </div>
   );

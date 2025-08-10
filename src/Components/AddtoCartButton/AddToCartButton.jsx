@@ -24,6 +24,7 @@ export default function AddProductButton({ onAdd }) {
   );
 }
  */
+import './addtocartbutton.css';
 export default function AddProductButton({ product, onAdd }) {
     
   const handleAdd = () => {
@@ -31,7 +32,7 @@ export default function AddProductButton({ product, onAdd }) {
     storedProducts.push(product);
     localStorage.setItem("localProducts", JSON.stringify(storedProducts));
 
-    if (onAdd) onAdd(product);
+  
   };
 
   return (
