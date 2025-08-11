@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
 import './addescarts.css';
+import RemoveButton from "../RemoveButton/RemoveButton";
 
 export default function AddesCarts() {
   const [products, setProducts] = useState([]);
+
+
+    useEffect(() => {
+    localStorage.setItem("localProducts", JSON.stringify(products));
+  }, [products]);
 
   useEffect(() => {
     const stored = localStorage.getItem("localProducts");
@@ -11,12 +17,10 @@ export default function AddesCarts() {
     }
   }, []);
 
-/*   useEffect(() => {
-    localStorage.setItem("localProducts", JSON.stringify(products));
-  }, [products]); */
-
   const removeProduct = (id) => {
     setProducts(prev => prev.filter(p => p.id !== id));
+      /*  localStorage.setItem("localProducts", JSON.stringify(products)); */
+  /*   products = localStorage.setItem("localProducts"); */
   };
 
   const changeQuantity = (id, amount) => {
@@ -26,15 +30,9 @@ export default function AddesCarts() {
         : p
     ));
   };
-
   const totalPrice = products.reduce(
     (sum, p) => sum + p.price * (p.quantity || 1), 0
   );
-/* 
-  if (products.length === 0) {
-    return <p className="empty-cart-msg">Your cart is empty.</p>;
-  } */
-
   return (
     <div className="cart-container">
       <h2>Shopping Cart</h2>
@@ -57,12 +55,9 @@ export default function AddesCarts() {
               <button onClick={() => changeQuantity(p.id, 1)}>+</button>
             </div>
           </div>
-          <button
-            className="remove-btn"
-            onClick={() => removeProduct(p.id)}
-          >
-            Remove
-          </button>
+         <RemoveButton onRemove={() => removeProduct(p.id)}/>
+            
+         
         </div>
       ))}
       <h3>Total: ${totalPrice.toFixed(2)}</h3>
