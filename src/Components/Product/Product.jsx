@@ -6,6 +6,18 @@ import AddProductButton from '../AddtoCartButton/AddToCartButton';
 export default function Product({ info, showMoreDetails = true}) {
   const images = info.images || [];
   const [mainImage, setMainImage] = useState("");
+  const handleAddProduct = (product) => {
+
+  const storedProducts = JSON.parse(localStorage.getItem("localProducts")) || [];
+
+  storedProducts.push(product);
+
+
+  localStorage.setItem("localProducts", JSON.stringify(storedProducts));
+
+  console.log("Product added to localStorage:", product);
+};
+
   
     useEffect(() => {
       if (images.length > 0) {
@@ -23,7 +35,9 @@ export default function Product({ info, showMoreDetails = true}) {
         />
       </div>
       <div className="product-actions">
-        <AddProductButton product={info} onAdd={() => alert("Product Added Successfully")} />
+       <AddProductButton product={info} onAdd={handleAddProduct} />
+
+
        {showMoreDetails && <MoreDetailsButton product={info} />}
       </div>
     </div>

@@ -1,3 +1,25 @@
+import './addtocartbutton.css'
+export default function AddProductButton({ product, onAdd }) {
+  const handleAdd = () => {
+    if (onAdd) onAdd(product);
+  };
+
+  return (
+    <button onClick={handleAdd}>Add Product</button>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* import { useState } from "react";
 import './addtocartbutton.css'
 export default function AddProductButton({ onAdd }) {
@@ -22,25 +44,31 @@ export default function AddProductButton({ onAdd }) {
   return (
     <button onClick={handleAdd}>Add Product</button>
   );
-}
- */
-import './addtocartbutton.css';
-export default function AddProductButton({ product, onAdd }) {
+} */
+
+/* import './addtocartbutton.css'; */
+
+
+/* 
+export default function AddProductButton({ product }) {
   const handleAdd = () => {
-    if (onAdd) {
-      onAdd(product);
+    if (!product?.id) return alert("Invalid product");
+
+    const storedProducts = JSON.parse(localStorage.getItem("localProducts") || "[]");
+
+    const existingProduct = storedProducts.find(p => p.id === product.id);
+    if (existingProduct) {
+      existingProduct.quantity = (existingProduct.quantity || 1) + 1;
     } else {
-      const storedProducts = JSON.parse(localStorage.getItem("localProducts") || "[]");
-      const existingIndex = storedProducts.findIndex(p => p.id === product.id);
-      if (existingIndex !== -1) {
-        storedProducts[existingIndex].quantity = (storedProducts[existingIndex].quantity || 1) + 1;
-      } else {
-        storedProducts.push({ ...product, quantity: 1 });
-      }
-      localStorage.setItem("localProducts", JSON.stringify(storedProducts));
-      alert("Product added to cart");
+      storedProducts.push({ ...product, quantity: 1 });
     }
+
+    localStorage.setItem("localProducts", JSON.stringify(storedProducts));
+    alert("Product added to cart!");
   };
 
   return <button onClick={handleAdd}>Add Product</button>;
 }
+ */
+
+
