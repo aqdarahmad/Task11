@@ -9,7 +9,6 @@ export default function AddedCart() {
     if (storedProducts) {
       const parsedProducts = JSON.parse(storedProducts);
 
-      // دمج المنتجات المتكررة مع زيادة الكمية
       const mergedProducts = parsedProducts.reduce((acc, prod) => {
         const existing = acc.find(item => item.id === prod.id);
         if (existing) {
@@ -24,7 +23,6 @@ export default function AddedCart() {
     }
   }, []);
 
-  // تحديث localStorage عند تغيير المنتجات
   useEffect(() => {
     localStorage.setItem("localProducts", JSON.stringify(products));
   }, [products]);
@@ -60,13 +58,19 @@ export default function AddedCart() {
     <div className="cart-container">
       <h2 className="cart-title">Shopping Cart</h2>
       <div className="products-list">
-        {products.map((product, index) => (
-          <div key={`${product.id}-${index}`} className="product-item-simple" style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
-            <img
-              src={product.images?.[0] || product.image || ''}
-              alt={product.name}
-              style={{ width: '80px', height: '80px', objectFit: 'cover', marginRight: '15px', borderRadius: '8px' }}
-            />
+        {products.map(product => (
+          <div
+            key={product.id}
+            className="product-item-simple"
+            style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}
+          >
+            {(product.images?.[0] || product.image) && (
+              <img
+                src={product.images?.[0] || product.image}
+                alt={product.name}
+                style={{ width: '80px', height: '80px', objectFit: 'cover', marginRight: '15px', borderRadius: '8px' }}
+              />
+            )}
             <div style={{ flexGrow: 1 }}>
               <h4 className="product-name">{product.name}</h4>
               <p><strong>Price:</strong> ${product.price.toFixed(2)}</p>
@@ -78,7 +82,18 @@ export default function AddedCart() {
                 <button onClick={() => handleQuantityChange(product.id, 1)}>+</button>
               </div>
             </div>
-            <button onClick={() => handleRemove(product.id)} style={{ marginLeft: '10px', backgroundColor: '#c0392b', color: 'white', border: 'none', padding: '8px 12px', borderRadius: '5px', cursor: 'pointer' }}>
+            <button
+              onClick={() => handleRemove(product.id)}
+              style={{
+                marginLeft: '10px',
+                backgroundColor: '#c0392b',
+                color: 'white',
+                border: 'none',
+                padding: '8px 12px',
+                borderRadius: '5px',
+                cursor: 'pointer'
+              }}
+            >
               Remove
             </button>
           </div>

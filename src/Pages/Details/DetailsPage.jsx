@@ -20,11 +20,25 @@ export default function ProductDetails() {
     return <p>Product not found</p>;
   }
 
-  const handleAddToCart = (productToAdd) => {
-    // هنا منطق الإضافة للسلة
-    console.log('Add to cart:', productToAdd);
-  };
+const handleAddToCart = (productToAdd) => {
 
+  const storedProducts = JSON.parse(localStorage.getItem("localProducts") || "[]");
+
+  const existingProductIndex = storedProducts.findIndex(p => p.id === productToAdd.id);
+
+  if (existingProductIndex !== -1) {
+  
+    storedProducts[existingProductIndex].quantity = (storedProducts[existingProductIndex].quantity || 1) + 1;
+  } else {
+  
+    storedProducts.push({ ...productToAdd, quantity: 1 });
+  }
+
+
+  localStorage.setItem("localProducts", JSON.stringify(storedProducts));
+
+  alert("Product added to cart!");
+};
   return (
     <div className="product-details-page">
       <h2>{product.name}</h2>

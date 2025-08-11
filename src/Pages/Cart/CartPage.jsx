@@ -1,4 +1,4 @@
-import React from 'react'
+
 import AddedCart from '../../Components/AddedCarts/AddesCarts'
 
 export default function CartPage() {
