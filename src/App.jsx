@@ -40,18 +40,18 @@ export default function App() {
 
   return (
     <>
-    <Navbar logo={"React Shop"}>
+   {/*  <Navbar logo={"React Shop"}>
                 <Navitem title={"Home"} link={"/"} />
-                <Navitem title={"Details"} link={"/details"} />
+                <Navitem title={"Details"} link={"/product/:id"} />
                 <Navitem title={"Cart"} link={"/cart"} />
 
 
-            </Navbar>
+            </Navbar> */}
     
 
    <AppRoutes/>
 
-   <Footer/>
+{/*    <Footer/> */}
 
 
 

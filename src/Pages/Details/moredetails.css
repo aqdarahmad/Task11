@@ -1,0 +1,91 @@
+:root {
+  --mahogany: #442727;
+  --white-smoke: #E9E7D9;
+  --light-camel: #D2C6B2;
+  --pistachio-cream: #927D14;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--white-smoke);
+  color: var(--mahogany);
+  margin: 20px;
+}
+
+.product-details-page {
+  background-color: var(--light-camel);
+  padding: 25px 30px;
+  border-radius: 14px;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 6px 12px rgba(68, 39, 39, 0.2);
+}
+
+.product-details-page h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 18px;
+  color: var(--mahogany);
+  border-bottom: 2px solid var(--pistachio-cream);
+  padding-bottom: 8px;
+}
+
+.thumbnail-list {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail:hover,
+.thumbnail.selected {
+  border-color: var(--pistachio-cream);
+}
+
+.main-image-large {
+  display: block;
+  max-width: 100%;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(146, 125, 20, 0.4);
+}
+
+.product-details-page p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  line-height: 1.5;
+  color: var(--mahogany);
+}
+
+.product-details-page p strong {
+  color: var(--pistachio-cream);
+  font-weight: 600;
+}
+
+.add-to-cart {
+  background-color: var(--pistachio-cream);
+  color: var(--white-smoke);
+  border: none;
+  padding: 12px 26px;
+  font-size: 1.15rem;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(146, 125, 20, 0.6);
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: var(--mahogany);
+  box-shadow: 0 6px 14px rgba(68, 39, 39, 0.8);
+}
