@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 import './moredetails.css';
 import AddProductButton from '../../Components/AddtoCartButton/AddToCartButton';
 
-
 export default function ProductDetails() {
   const { state } = useLocation();
   const product = state?.product || null;
@@ -20,25 +19,20 @@ export default function ProductDetails() {
     return <p>Product not found</p>;
   }
 
-const handleAddToCart = (productToAdd) => {
 
-  const storedProducts = JSON.parse(localStorage.getItem("localProducts") || "[]");
+  const handleAddToCart = (product) => {
 
-  const existingProductIndex = storedProducts.findIndex(p => p.id === productToAdd.id);
+  const storedProducts = JSON.parse(localStorage.getItem("localProducts")) || [];
 
-  if (existingProductIndex !== -1) {
-  
-    storedProducts[existingProductIndex].quantity = (storedProducts[existingProductIndex].quantity || 1) + 1;
-  } else {
-  
-    storedProducts.push({ ...productToAdd, quantity: 1 });
-  }
+  storedProducts.push(product);
 
 
   localStorage.setItem("localProducts", JSON.stringify(storedProducts));
 
-  alert("Product added to cart!");
+  console.log("Product added to localStorage:", product);
 };
+
+
   return (
     <div className="product-details-page">
       <h2>{product.name}</h2>
@@ -70,7 +64,9 @@ const handleAddToCart = (productToAdd) => {
       <p><strong>Rating:</strong> {product.rating?.rate ?? 'N/A'} ({product.rating?.count ?? 0} reviews)</p>
       <p><strong>Description:</strong> {product.description}</p>
 
+     
       <AddProductButton product={product} onAdd={handleAddToCart} />
+
     </div>
   );
 }
