@@ -6,6 +6,10 @@ import QuantityButtons from "../QuantityButtons/QuantityButtons";
 export default function AddesCarts() {
   const [products , setProducts] = useState([]);
 
+   const totalPrice = products.reduce(
+    (sum, p) => sum + p.price * (p.quantity || 1), 0
+  );
+
   useEffect(() => {
     const stored = localStorage.getItem("localProducts");
     if (stored) {
@@ -36,9 +40,7 @@ const changeQuantity = (id, amount) => {
   });
 };
 
-  const totalPrice = products.reduce(
-    (sum, p) => sum + p.price * (p.quantity || 1), 0
-  );
+ 
 
   return (
   <div className="cart-container">
@@ -60,7 +62,7 @@ const changeQuantity = (id, amount) => {
          <div>
   <QuantityButtons
     quantity={p.quantity || 1}
-    onDecrease={() => changeQuantity(p.id, -1)}//ask changequnatity for dec 1
+    onDecrease={() => changeQuantity(p.id, -1)}//ask changequnatity for des
     onIncrease={() => changeQuantity(p.id, 1)}
   />
 </div>

@@ -33,7 +33,7 @@ export default function CategoryProduct() {
     fetch(`http://localhost:3000/products?categoryId=${categoryId}`)
       .then(res => res.json())
       .then(data => setProducts(data))
-      .catch(err => console.error("Error fetching products:", err));
+    
   };
 
   return (
@@ -64,8 +64,8 @@ export default function CategoryProduct() {
       <Product
         key={prod.id}
         info={prod}
-        onAddToCart={() => console.log(`Added ${prod.name} to cart`)}
-        onMoreDetails={() => console.log(`Details of ${prod.name}`)}
+      /*   onAddToCart={() => console.log(`Added ${prod.name} to cart`)}
+        onMoreDetails={() => console.log(`Details of ${prod.name}`)} */
       />
     ))}
   </div>

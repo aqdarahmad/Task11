@@ -9,7 +9,7 @@ export default function AppRoutes() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<HomePage />} />
-           <Route path="/detail/:productId" element={<DetailsPage />} />
+          <Route path="/detail/:id" element={<DetailsPage />} />
           <Route path="/cart" element={<CartPage />} />
         </Route>
       </Routes>

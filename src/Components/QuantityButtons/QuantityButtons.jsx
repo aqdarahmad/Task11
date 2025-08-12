@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./buttonsstyle.css";
 
 export default function QuantityButtons({ quantity, onIncrease, onDecrease }) {
