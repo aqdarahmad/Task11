@@ -1,14 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import AddProductButton from "../../Components/AddtoCartButton/AddToCartButton";
 import './moredetails.css';
-import AddProductButton from '../../Components/AddtoCartButton/AddToCartButton';
+
 
 export default function ProductDetails() {
-  const { state } = useLocation();
-  const product = state?.product || null;
-
+  const { productId } = useParams();
+  const [product, setProduct] = useState(null);
   const [mainImage, setMainImage] = useState(null);
 
+  useEffect(() => {
+    const storedProducts = JSON.parse(localStorage.getItem("localProducts")) || [];
+    const foundProduct = storedProducts.find((p) => p.id === productId);
+    setProduct(foundProduct || null);
+  }, [productId]);
+
+ 
   useEffect(() => {
     if (product?.images?.length > 0) {
       setMainImage(product.images[0]);
@@ -19,19 +26,11 @@ export default function ProductDetails() {
     return <p>Product not found</p>;
   }
 
-
   const handleAddToCart = (product) => {
-
-  const storedProducts = JSON.parse(localStorage.getItem("localProducts")) || [];
-
-  storedProducts.push(product);
-
-
-  localStorage.setItem("localProducts", JSON.stringify(storedProducts));
-
-  console.log("Product added to localStorage:", product);
-};
-
+    const storedProducts = JSON.parse(localStorage.getItem("localProducts")) || [];
+    storedProducts.push(product);
+    localStorage.setItem("localProducts", JSON.stringify(storedProducts));
+  };
 
   return (
     <div className="product-details-page">
@@ -45,7 +44,7 @@ export default function ProductDetails() {
             alt={`Thumbnail ${idx + 1}`}
             className="thumbnail"
             onClick={() => setMainImage(img)}
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: "pointer" }}
           />
         ))}
       </div>
@@ -55,18 +54,24 @@ export default function ProductDetails() {
           src={mainImage}
           alt={product.name}
           className="main-image-large"
-          style={{ width: '400px', marginTop: '10px' }}
+          style={{ width: "400px", marginTop: "10px" }}
         />
       )}
 
       <p><strong>Price:</strong> ${product.price.toFixed(2)}</p>
       <p><strong>Status:</strong> {product.inStock ? "In Stock" : "Out of Stock"}</p>
-      <p><strong>Rating:</strong> {product.rating?.rate ?? 'N/A'} ({product.rating?.count ?? 0} reviews)</p>
+      <p><strong>Rating:</strong> {product.rating?.rate ?? "N/A"} ({product.rating?.count ?? 0} reviews)</p>
       <p><strong>Description:</strong> {product.description}</p>
 
-     
       <AddProductButton product={product} onAdd={handleAddToCart} />
-
     </div>
   );
 }
+
+
+
+
+
+
+
+

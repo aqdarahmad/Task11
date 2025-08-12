@@ -74,18 +74,3 @@ export default function CategoryProduct() {
   );
 }
 
-/* 
-نزلت مكتبه اسمها 
-npm install classname وعملت امبورت
-دائما الكاتيجوري 
-الها كلاس ثابت 
-هو 
-categorycard وهلا
-ازا تساوى الids اسم الكلاس بصير selected
-في طريقه الif statment 
-const isSelected = selectedCategory === cat.id;
-const classNames = isSelected ? "category-card selected" : "category-card";
-
-<div key={cat.id} className={classNames} onClick={() => handleCategoryClick(cat.id)}>
-  ...
-</div> */
