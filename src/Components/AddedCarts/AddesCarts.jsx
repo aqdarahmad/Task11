@@ -5,11 +5,6 @@ import RemoveButton from "../RemoveButton/RemoveButton";
 export default function AddesCarts() {
   const [products, setProducts] = useState([]);
 
-
-    useEffect(() => {
-    localStorage.setItem("localProducts", JSON.stringify(products));
-  }, [products]);
-
   useEffect(() => {
     const stored = localStorage.getItem("localProducts");
     if (stored) {
@@ -17,22 +12,36 @@ export default function AddesCarts() {
     }
   }, []);
 
-  const removeProduct = (id) => {
-    setProducts(prev => prev.filter(p => p.id !== id));
-      /*  localStorage.setItem("localProducts", JSON.stringify(products)); */
-  /*   products = localStorage.setItem("localProducts"); */
-  };
+  
+  
+const removeProduct = (id) => {
+  setProducts((prevProducts) => {
+    const updatedProducts = prevProducts.filter((p) => p.id !== id);
+    localStorage.setItem("localProducts", JSON.stringify(updatedProducts));  
+  return updatedProducts;
+   
+  });
+};
+  
+/*    useEffect(() => {
+    localStorage.setItem("localProducts", JSON.stringify(products));
+  }, [products]); */ 
 
-  const changeQuantity = (id, amount) => {
-    setProducts(prev => prev.map(p =>
+const changeQuantity = (id, amount) => {
+  setProducts((prevProducts) => {
+    const updatedProducts = prevProducts.map((p) =>
       p.id === id
         ? { ...p, quantity: Math.max(1, (p.quantity || 1) + amount) }
         : p
-    ));
-  };
+    );
+    localStorage.setItem("localProducts", JSON.stringify(updatedProducts)); // حفظ فوري
+    return updatedProducts;
+  });
+};
   const totalPrice = products.reduce(
     (sum, p) => sum + p.price * (p.quantity || 1), 0
   );
+
   return (
     <div className="cart-container">
       <h2>Shopping Cart</h2>
@@ -55,12 +64,11 @@ export default function AddesCarts() {
               <button onClick={() => changeQuantity(p.id, 1)}>+</button>
             </div>
           </div>
-         <RemoveButton onRemove={() => removeProduct(p.id)}/>
-            
-         
+          <RemoveButton onRemove={() => removeProduct(p.id)} />
         </div>
       ))}
       <h3>Total: ${totalPrice.toFixed(2)}</h3>
+      
     </div>
   );
 }
