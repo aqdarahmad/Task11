@@ -1,12 +1,12 @@
-/* createproduct.css */
+
 
 .form-container {
-  background-color: #F8E794; /* Creased Khaki */
+  background-color: #F8E794;
   padding: 20px;
   border-radius: 12px;
   max-width: 400px;
   margin: 20px auto;
-  box-shadow: 0 4px 12px rgba(40, 65, 57, 0.2); /* Emerald Green shadow */
+  box-shadow: 0 4px 12px rgba(40, 65, 57, 0.2); 
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -16,23 +16,23 @@
 input[type="text"],
 input[type="number"] {
   padding: 12px 15px;
-  border: 2px solid #809076; /* Wasabi */
+  border: 2px solid #809076;
   border-radius: 8px;
   font-size: 1rem;
-  color: #111419; /* Noir de Vigne */
+  color: #111419; 
   transition: border-color 0.3s ease;
 }
 
 input[type="text"]:focus,
 input[type="number"]:focus {
   outline: none;
-  border-color: #BB6830; /* Egyptian Earth */
+  border-color: #BB6830; 
   background-color: #fff;
 }
 
 button {
-  background-color: #284139; /* Emerald Green */
-  color: #F8E794; /* Creased Khaki */
+  background-color: #284139; 
+  color: #F8E794; 
   font-weight: 500;
   padding: 9px;
   border: none;
@@ -43,5 +43,5 @@ button {
 }
 
 button:hover {
-  background-color: #BB6830; /* Egyptian Earth */
+  background-color: #BB6830; 
 }

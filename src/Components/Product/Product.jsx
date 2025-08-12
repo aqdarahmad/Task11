@@ -1,22 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import './product.css';
-import MoreDetailsButton from '../MoreDetails/MoreDetailsButtton';
+import MoreDetailsButtton from '../MoreDetails/MoreDetailsButtton';
 import AddProductButton from '../AddtoCartButton/AddToCartButton';
 
 export default function Product({ info, showMoreDetails = true}) {
   const images = info.images || [];
   const [mainImage, setMainImage] = useState("");
+
+
   const handleAddProduct = (product) => {
-
-  const storedProducts = JSON.parse(localStorage.getItem("localProducts")) || [];
-
-  storedProducts.push(product);
-
-
-  localStorage.setItem("localProducts", JSON.stringify(storedProducts));
-
-  console.log("Product added to localStorage:", product);
-};
+   const storedProducts = JSON.parse(localStorage.getItem("localProducts")) || [];
+   storedProducts.push(product);
+   localStorage.setItem("localProducts", JSON.stringify(storedProducts));
+  };
 
   
     useEffect(() => {
@@ -24,6 +20,8 @@ export default function Product({ info, showMoreDetails = true}) {
         setMainImage(images[0]);
       }
     }, [images]);
+
+    
     return (
     <div className="product-card">
       <h2 className="product-name">{info.name}</h2>
@@ -38,7 +36,7 @@ export default function Product({ info, showMoreDetails = true}) {
        <AddProductButton product={info} onAdd={handleAddProduct} />
 
 
-       {showMoreDetails && <MoreDetailsButton product={info} />}
+       {showMoreDetails && <MoreDetailsButtton product={info} />}
       </div>
     </div>
   );
