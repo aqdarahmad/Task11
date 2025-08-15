@@ -2,75 +2,64 @@ import { useState, useEffect } from "react";
 import "./categoryproduct.css";
 import classNames from 'classnames';
 import Product from "../Product/Product";
+import Category from "../Category/Category";
 
 export default function CategoryProduct() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState();
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const baseurl = import.meta.env.VITE_BASE_URL;
 
 
   function fetchCategories() {
-    const getData = async () => {
-
-      const res = await fetch("http://localhost:3000/categories");
-      const data = await res.json();
-      setCategories(data);
-
-    }
-
-    getData();
+    fetch(`${baseurl}/categories?fields=id`)
+      .then(res => res.json())
+      .then(data => setCategories(data));
   }
+
+function fetchProducts(categoryId) {
+  fetch(`${baseurl}/products${categoryId ? `?categoryId=${categoryId}` : ''}`)
+    .then(res => res.json())
+    .then(data => setProducts(
+      data.map(p => ({
+        id: p.id,
+        name: p.name,
+        image: p.image || (p.images?.[0] ?? null)
+      }))
+    ));
+}
+  const handleCategoryClick = (categoryId) => {
+    setSelectedCategory(categoryId);
+    fetchProducts(categoryId);
+  };
 
   useEffect(() => {
     fetchCategories();
+    fetchProducts();
   }, []);
-
-
-
-
-  const handleCategoryClick = (categoryId) => {
-    setSelectedCategory(categoryId);
-    fetch(`http://localhost:3000/products?categoryId=${categoryId}`)
-      .then(res => res.json())
-      .then(data => setProducts(data))
-    
-  };
 
   return (
     <div className="category-container">
       <h2>Categories</h2>
-      <div className="category-list">
-        {categories.map((cat) => (
+      <div className="categories-container">
+        {categories.map(cat => (
           <div
-
-
             key={cat.id}
             onClick={() => handleCategoryClick(cat.id)}
             className={classNames('category-card', { selected: selectedCategory === cat.id })}
           >
-            {cat.name}
-
-
-            {cat.image && <img src={cat.image} alt={cat.name} />}
-            < span > {cat.name}</span>
+            <Category info={cat} />
           </div>
-        ))
-        }
-      </div >
+        ))}
+      </div>
 
-   {selectedCategory && (
-  <div className="product-list">
-    {products.map((prod) => (
-      <Product
-        key={prod.id}
-        info={prod}
-      /*   onAddToCart={() => console.log(`Added ${prod.name} to cart`)}
-        onMoreDetails={() => console.log(`Details of ${prod.name}`)} */
-      />
-    ))}
-  </div>
-)}
-    </div >
+      <h2>Products</h2>
+      <div className="product-list">
+        {products.map(prod => (
+          <Product key={prod.id} info={prod} />
+        ))}
+      </div>
+    </div>
   );
 }
-

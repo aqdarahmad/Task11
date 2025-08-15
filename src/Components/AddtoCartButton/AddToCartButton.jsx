@@ -1,10 +1,9 @@
 import './addtocartbutton.css'
-export default function AddProductButton({ product, onAdd }) {
-  const handleAdd = () => {
-    if (onAdd) onAdd(product);
-  };
+import handleAddToCart from '../../Handlers/handleAddToCart';
+export default function AddProductButton({ product }) {
+
   return (
-    <button onClick={handleAdd}>Add Product</button>
+    <button onClick={handleAddToCart(product)}>Add Product</button>
   );
 }
 

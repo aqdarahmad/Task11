@@ -1,91 +1,75 @@
-:root {
-  --mahogany: #442727;
-  --white-smoke: #E9E7D9;
-  --light-camel: #D2C6B2;
-  --pistachio-cream: #927D14;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--white-smoke);
-  color: var(--mahogany);
-  margin: 20px;
-}
-
 .product-details-page {
-  background-color: var(--light-camel);
-  padding: 25px 30px;
-  border-radius: 14px;
-  max-width: 700px;
-  margin: auto;
-  box-shadow: 0 6px 12px rgba(68, 39, 39, 0.2);
+  background-color: #f5f1e8;
+  padding: 25px;
+  border-radius: 16px;
+  max-width: 400px;
+  margin: 40px auto;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  text-align: center;
 }
 
 .product-details-page h2 {
-  font-weight: 700;
-  font-size: 2rem;
-  margin-bottom: 18px;
-  color: var(--mahogany);
-  border-bottom: 2px solid var(--pistachio-cream);
-  padding-bottom: 8px;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #442727;
 }
 
 .thumbnail-list {
   display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 15px;
+  overflow-x: auto;
 }
 
 .thumbnail {
-  width: 100px;
-  height: 100px;
-  border-radius: 12px;
+  width: 70px;
+  height: 70px;
   object-fit: cover;
+  border-radius: 12px;
   cursor: pointer;
-  border: 3px solid transparent;
-  transition: border-color 0.3s ease;
+  border: 2px solid transparent;
+  transition: transform 0.2s, border-color 0.2s;
 }
 
 .thumbnail:hover,
 .thumbnail.selected {
-  border-color: var(--pistachio-cream);
+  border-color: #927D14;
+ 
 }
 
 .main-image-large {
-  display: block;
-  max-width: 100%;
-  height: 400px;
-  object-fit: contain;
-  border-radius: 16px;
-  margin-bottom: 25px;
-  box-shadow: 0 4px 12px rgba(146, 125, 20, 0.4);
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.main-image-large:hover {
+  transform: scale(1.02);
 }
 
 .product-details-page p {
-  font-size: 1.1rem;
-  margin: 10px 0;
-  line-height: 1.5;
-  color: var(--mahogany);
-}
-
-.product-details-page p strong {
-  color: var(--pistachio-cream);
-  font-weight: 600;
+  font-size: 1rem;
+  color: #442727;
+  margin: 8px 0;
 }
 
 .add-to-cart {
-  background-color: var(--pistachio-cream);
-  color: var(--white-smoke);
+  background-color: #927D14;
+  color: #E9E7D9;
   border: none;
-  padding: 12px 26px;
-  font-size: 1.15rem;
+  padding: 10px 24px;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0 5px 10px rgba(146, 125, 20, 0.6);
-  transition: background-color 0.3s ease;
+  font-weight: 600;
+  transition: all 0.2s;
 }
 
 .add-to-cart:hover {
-  background-color: var(--mahogany);
-  box-shadow: 0 6px 14px rgba(68, 39, 39, 0.8);
+  background-color: #442727;
+  color: #fff;
 }
