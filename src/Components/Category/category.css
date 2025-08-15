@@ -1,8 +1,9 @@
 .categories-container {
   display: flex;
   gap: 20px;
-  overflow-x: auto;
-  padding: 20px;
+
+  padding: 80px;
+  margin: 50px;
  
 }
 
@@ -24,14 +25,9 @@
 
 
 .category-icon {
-  font-size: 3rem;
+
   color: #b71818;
   margin-bottom: 12px;
 }
 
-.category-name {
-  font-weight: 700;
-  font-size: 1rem;
-  color: #222;
-  padding: 0 5px;
-}
+

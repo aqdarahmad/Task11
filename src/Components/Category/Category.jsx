@@ -33,7 +33,7 @@ export default function Category({ info }) {
   return (
     <div className="category-card">
       <IconComponent size={40} color="red" />
-      <div className="category-name">{info.name}</div>
+    
     </div>
   );
 }
