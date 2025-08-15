@@ -32,7 +32,6 @@ export default function Category({ info }) {
 
   return (
     <div className="category-card">
-      <div className="category-id">ID: {info.id}</div>
       <IconComponent size={40} color="blue" />
       <div className="category-name">{info.name}</div>
     </div>
