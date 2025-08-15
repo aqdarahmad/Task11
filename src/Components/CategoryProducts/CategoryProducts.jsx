@@ -18,17 +18,17 @@ export default function CategoryProduct() {
       .then(data => setCategories(data));
   }
 
-function fetchProducts(categoryId) {
-  fetch(`${baseurl}/products${categoryId ? `?categoryId=${categoryId}` : ''}`)
-    .then(res => res.json())
-    .then(data => setProducts(
-      data.map(p => ({
-        id: p.id,
-        name: p.name,
-        image: p.image || (p.images?.[0] ?? null)
-      }))
-    ));
-}
+  function fetchProducts(categoryId) {
+    fetch(`${baseurl}/products${categoryId ? `?categoryId=${categoryId}` : ''}`)
+      .then(res => res.json())
+      .then(data => setProducts(
+        data.map(p => ({
+          id: p.id,
+          name: p.name,
+          image: p.image || (p.images?.[0] ?? null)
+        }))
+      ));
+  }
   const handleCategoryClick = (categoryId) => {
     setSelectedCategory(categoryId);
     fetchProducts(categoryId);

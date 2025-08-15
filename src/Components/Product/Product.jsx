@@ -5,9 +5,6 @@ import AddProductButton from '../AddtoCartButton/AddToCartButton';
 
 export default function Product({ info, showMoreDetails = true }) {
   const mainImage = info.image || null;
-
-
-
   return (
     <div className="product-card">
       <h2 className="product-name">{info.name}</h2>
