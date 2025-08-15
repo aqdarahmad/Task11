@@ -3,6 +3,9 @@ import HomePage from './Pages/HomePage'
 import CartPage from './Pages/Cart/CartPage'
 import DetailsPage from './Pages/Details/DetailsPage'
 import Layout from './Components/Layout/Layout'
+import Login from './Components/Login/Login'
+import SignUp from './Components/SignUp/SignUp'
+
 export default function AppRoutes() {
   return (
     <div>
@@ -11,8 +14,11 @@ export default function AppRoutes() {
           <Route index element={<HomePage />} />
           <Route path="/detail/:id" element={<DetailsPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+
         </Route>
       </Routes>
-      </div>
+    </div>
   )
 }

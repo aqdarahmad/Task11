@@ -9,7 +9,7 @@ export default function Navbar({ logo, children }) {
             <div className="logo">{logo}</div>
             <div className="links">
                 {
-                   children
+                    children
                 }
             </div>
         </div>
