@@ -2,7 +2,7 @@
   background-color: #f5f1e8;
   padding: 25px;
   border-radius: 16px;
-  max-width: 400px;
+  max-width: 300px;
   margin: 40px auto;
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
   text-align: center;
@@ -23,8 +23,8 @@
 }
 
 .thumbnail {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
   border-radius: 12px;
   cursor: pointer;
@@ -39,13 +39,13 @@
 }
 
 .main-image-large {
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+ 
 }
 
 .main-image-large:hover {

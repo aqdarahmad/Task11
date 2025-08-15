@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './moredetails.css';
 import AddProductButton from '../../Components/AddtoCartButton/AddToCartButton';
@@ -34,7 +34,6 @@ export default function DetailsPage() {
           <img
             key={idx}
             src={img}
-            alt={`Thumbnail ${idx + 1}`}
             className={`thumbnail ${mainImage === img ? 'selected' : ''}`}
             onClick={() => setMainImage(img)}
           />
@@ -49,10 +48,10 @@ export default function DetailsPage() {
         />
       )}
 
-      <p><strong>Price:</strong> ${product.price?.toFixed(2) ?? 'N/A'}</p>
-      <p><strong>Status:</strong> {product.inStock ? "In Stock" : "Out of Stock"}</p>
-      <p><strong>Rating:</strong> {product.rating?.rate ?? 'N/A'} ({product.rating?.count ?? 0} reviews)</p>
-      <p><strong>Description:</strong> {product.description}</p>
+      <p>Price: ${product.price?.toFixed(2) ?? 'N/A'}</p>
+      <p>Status: {product.inStock ? "In Stock" : "Out of Stock"}</p>
+      <p>Rating: {product.rating?.rate ?? 'N/A'} ({product.rating?.count ?? 0} reviews)</p>
+      <p>Description:{product.description}</p>
 
       <AddProductButton product={product} />
     </div>

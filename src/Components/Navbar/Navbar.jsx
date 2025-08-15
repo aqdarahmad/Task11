@@ -1,4 +1,3 @@
-
 import './navbar.css'
 
 export default function Navbar({ logo, children }) {
