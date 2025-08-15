@@ -1,51 +1,42 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import './moredetails.css';
 import AddProductButton from '../../Components/AddtoCartButton/AddToCartButton';
 
 export default function DetailsPage() {
-  const { state } = useLocation();
-  const product = state?.product || null;
-
+  const { id } = useParams(); 
+  const [product, setProduct] = useState(null);
   const [mainImage, setMainImage] = useState(null);
 
+  const baseurl = import.meta.env.VITE_BASE_URL;
+
   useEffect(() => {
-    if (product?.images?.length > 0) {
-      setMainImage(product.images[0]);
-    }
-  }, [product]);
+   
+    fetch(`${baseurl}/products/${id}`)
+      .then(res => res.json())
+      .then(data => {
+        setProduct(data);
+        if (Array.isArray(data.images) && data.images.length > 0) {
+          setMainImage(data.images[0]);
+        }
+      })
+      .catch(err => console.error(err));
+  }, [id]);
 
-  if (!product) {
-    return <p>Product not found</p>;
-  }
-
-
-  const handleAddToCart = (product) => {
-
-  const storedProducts = JSON.parse(localStorage.getItem("localProducts")) || [];
-
-  storedProducts.push(product);
-
-
-  localStorage.setItem("localProducts", JSON.stringify(storedProducts));
-
-  console.log("Product added to localStorage:", product);
-};
-
+  if (!product) return <p>Loading product...</p>;
 
   return (
     <div className="product-details-page">
       <h2>{product.name}</h2>
 
       <div className="thumbnail-list">
-        {product.images.slice(0, 3).map((img, idx) => (
+        {Array.isArray(product.images) && product.images.map((img, idx) => (
           <img
             key={idx}
             src={img}
             alt={`Thumbnail ${idx + 1}`}
-            className="thumbnail"
+            className={`thumbnail ${mainImage === img ? 'selected' : ''}`}
             onClick={() => setMainImage(img)}
-            style={{ cursor: 'pointer' }}
           />
         ))}
       </div>
@@ -55,18 +46,15 @@ export default function DetailsPage() {
           src={mainImage}
           alt={product.name}
           className="main-image-large"
-          style={{ width: '400px', marginTop: '10px' }}
         />
       )}
 
-      <p><strong>Price:</strong> ${product.price.toFixed(2)}</p>
+      <p><strong>Price:</strong> ${product.price?.toFixed(2) ?? 'N/A'}</p>
       <p><strong>Status:</strong> {product.inStock ? "In Stock" : "Out of Stock"}</p>
       <p><strong>Rating:</strong> {product.rating?.rate ?? 'N/A'} ({product.rating?.count ?? 0} reviews)</p>
       <p><strong>Description:</strong> {product.description}</p>
 
-     
-      <AddProductButton product={product} onAdd={handleAddToCart} />
-
+      <AddProductButton product={product} />
     </div>
   );
 }
