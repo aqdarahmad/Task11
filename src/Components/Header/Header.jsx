@@ -1,4 +1,3 @@
-import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import Navitem from '../Navbar/Navitem';
 import { IconButton, Tooltip } from '@mui/material';

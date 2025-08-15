@@ -3,15 +3,14 @@
   gap: 20px;
   overflow-x: auto;
   padding: 20px;
-  scroll-behavior: smooth;
+ 
 }
 
 .category-card {
   border: none;
-  border-radius: 16px; 
-  width: 140px;
-  height: 180px;
-  background: linear-gradient(135deg, #f0f4ff, #d9e4ff);
+  border-radius: 100%; 
+  width: 80px;
+  height: 80px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   text-align: center;
@@ -19,17 +18,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+ 
 }
 
-.category-card:hover {
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
-  transform: translateY(-6px) scale(1.05);
-}
+
 
 .category-icon {
   font-size: 3rem;
-  color: #4a90e2;
+  color: #b71818;
   margin-bottom: 12px;
 }
 

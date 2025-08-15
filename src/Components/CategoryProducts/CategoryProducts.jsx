@@ -41,7 +41,7 @@ export default function CategoryProduct() {
 
   return (
     <div className="category-container">
-      <h2>Categories</h2>
+    
       <div className="categories-container">
         {categories.map(cat => (
           <div
