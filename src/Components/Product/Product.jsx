@@ -1,8 +1,6 @@
 import './product.css';
 import MoreDetailsButtton from '../MoreDetails/MoreDetailsButtton';
 import AddProductButton from '../AddtoCartButton/AddToCartButton';
-
-
 export default function Product({ info, showMoreDetails = true }) {
   const mainImage = info.image || null;
   return (
